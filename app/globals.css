@@ -28,3 +28,22 @@ body {
 .bggreen{
   background-color: #35AFA0;
 }
+.bgfacebook {
+  background: #3B5998
+}
+
+.bginsta {
+  background: #CC2366
+}
+
+.bgtwiter {
+  background: #1DA1F2
+}
+
+.bgreddit {
+  background: #FF4500
+}
+
+.bgpinterest {
+  background: #E60023
+}
