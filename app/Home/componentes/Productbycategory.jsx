@@ -1,17 +1,14 @@
 "use client";
 import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchProducts } from "@/Redux/slices/ProductsSlice";
 import { MoveRight } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchProducts } from "@/Redux/slices/ProductsSlice";
 import Rating from "@mui/material/Rating";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/navigation";
-import { Navigation, Autoplay } from "swiper/modules";
 import { addToCart } from "@/Redux/slices/cartSlice";
 
-const BestSellers = () => {
+const Productbycategory = ({ category }) => {
   const dispatch = useDispatch();
   const { items, loading, error } = useSelector((state) => state.products);
 
@@ -19,18 +16,21 @@ const BestSellers = () => {
     dispatch(fetchProducts());
   }, [dispatch]);
 
-  if (loading) return <p>جاري تحميل المنتجات ...</p>;
-  if (error) return <p>خطأ : {error}</p>;
-  if (!items) return <p>لا يوجد منتجات</p>;
+  const categories = [...new Set(items.map((p) => p.category))];
 
+  if (loading) return <p>جاري تحميل المنتجات...</p>;
+  if (error) return <p>خطأ: {error}</p>;
+  if (!items || items.length === 0) return <p>لا يوجد منتجات</p>;
+
+  const productbycatecory = items.filter((p) => p.category === category);
   return (
     <div className="w-3/5 mx-auto py-3">
-      {/* tittle best seller */}
-      <div className="flex justify-between">
+      {/* tittle product by category */}
+      <div className="flex justify-between py-3">
         <div>
-          <h3 className="text-md font-medium">BEST SELLERS</h3>
+          <h3 className="text-md font-medium">{category}</h3>
           <p className="text-xs text-gray-400">
-            Do not miss the current offers until the end of March.
+            The freshest green grocer products are waiting for you
           </p>
         </div>
         <div>
@@ -39,21 +39,52 @@ const BestSellers = () => {
           </button>
         </div>
       </div>
-      {/* products  */}
-      <div className="flex py-5 gap-0">
-        <Swiper
-          modules={[Navigation, Autoplay]}
-          spaceBetween={0}
-          slidesPerView={5}
-          grabCursor={true}
-          navigation
-          autoplay={{ delay: 3000 }}
-          loop={true}
-        >
-          {items.map((pro, i) => {
-            return (
-              <SwiperSlide key={i}>
-                <div className="p-4 border border-gray-200 rounded-md">
+
+      {/* products */}
+      <div className="rounded-lg border-gray-300 border-2 flex">
+        {/* left side  */}
+        <div className="w-1/3 flex flex-col relative pb-5">
+          <div className="absolute px-5 py-8">
+            <p>Weekly Discounts on</p>
+            <h3 className="font-semibold">{category}</h3>
+            <p className="text-xs my-3">Bacola Weekend Discount</p>
+            <button className="flex py-2 px-3 rounded-l-full rounded-r-full bg-blue-700 text-xs text-white cursor-pointer">
+              <Link href="/shop">View All</Link>
+            </button>
+          </div>
+          <Image
+            src="/assets/images/fasolia.png"
+            alt="..."
+            width={500}
+            height={300}
+          />
+
+          <div className=" p-4 text-gray-700 mt-3">
+            <ul className="grid grid-cols-2">
+              {categories ? (
+                categories.map((cat, i) => {
+                  return <li key={i}>{cat}</li>;
+                })
+              ) : (
+                <p>لا يوجد </p>
+              )}
+            </ul>
+          </div>
+          <button className="flex py-1 px-2 ml-3 text-sm text-blue-800 mt-auto cursor-pointer">
+            View All <MoveRight size={20} />
+          </button>
+        </div>
+        {/* left side  */}
+        {/* right side  */}
+        <div className="w-2/3 rounded-md grid grid-cols-4">
+          {/* products  */}
+          {productbycatecory ? (
+            productbycatecory.slice(0, 4).map((pro) => {
+              return (
+                <div
+                  key={pro.id}
+                  className="p-4 border border-gray-200 rounded-md"
+                >
                   <div className="relative">
                     <span className="absolute rounded bggreen text-white px-2 py-1 text-xs">
                       {pro.discountPercentage}%
@@ -106,13 +137,16 @@ const BestSellers = () => {
                     </button>
                   </div>
                 </div>
-              </SwiperSlide>
-            );
-          })}
-        </Swiper>
+              );
+            })
+          ) : (
+            <p>لا يوجد منتجات</p>
+          )}
+        </div>
+        {/* right side  */}
       </div>
     </div>
   );
 };
 
-export default BestSellers;
+export default Productbycategory;

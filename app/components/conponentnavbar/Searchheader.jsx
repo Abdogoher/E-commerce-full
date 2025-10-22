@@ -12,6 +12,8 @@ const searchheader = () => {
   const user=useSelector(state => state.user.user )
   const [showlogout, setshowlogout] = useState(false);
   const [isClient, setIsClient] = useState(false);
+  const cartItems = useSelector((state) => state.cart.items);
+  const totalQuantity = cartItems.reduce((acc, item) => acc + item.quantity, 0);
 
   useEffect(() => {
     setIsClient(true);
@@ -79,13 +81,15 @@ const searchheader = () => {
             <span className="mx-4 text-lg">$0.00</span>
             {/* cart  */}
             <div className="relative cursor-pointer">
-              <span className="bg-[#EA2B0F] text-white right-0 absolute -top-1  rounded-full px-1 text-xs">
-                0
-              </span>
-              <Handbag
-                className="rounded-full bg-red-300 p-1 text-[#EA2B0F]"
-                size={30}
-              />
+              <Link href="/">
+                <span className="bg-[#EA2B0F] text-white right-0 absolute -top-1  rounded-full px-1 text-xs">
+                  {totalQuantity}
+                </span>
+                <Handbag
+                  className="rounded-full bg-red-300 p-1 text-[#EA2B0F]"
+                  size={30}
+                />
+              </Link>
             </div>
           </div>
         ) : (
