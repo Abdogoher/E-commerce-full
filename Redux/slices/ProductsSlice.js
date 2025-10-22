@@ -6,19 +6,8 @@ export const fetchProducts = createAsyncThunk(
   "products/fetchProducts",
   async () => {
     const response = await axios.get("https://dummyjson.com/products");
-    const data = response.data;
-    // لو المنتجات عبارة عن array جبها
-    if (Array.isArray(data)) return data;
-    // لو المنتجات object يجبلي القيمة اللي جواها
-    if (data.products && typeof data.products === "object") {
-      return Object.values(data.products);
-    }
-    // لو الداتا object يحولها
-    if (data && typeof data === "object") {
-      return [];
-    }
-
-    return console.log(data);
+    const data = response.data.products;
+    return data;
   }
 );
 
