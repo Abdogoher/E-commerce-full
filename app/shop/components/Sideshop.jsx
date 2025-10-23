@@ -24,7 +24,7 @@ const Sideshop = () => {
       {/* image div */}
       <div className="mt-20 ">
         <Image
-          src="/assets/images/sidebar-banner.gif.png"
+          src="/assets/images/happyday.jpg"
           alt="..."
           width={270}
           height={370}
