@@ -1,9 +1,9 @@
 import {
-  Beef,
+  SoapDispenserDroplet,
   ChevronDown,
-  Coffee,
-  Croissant,
   TextAlignJustify,
+  FireExtinguisher,
+  Armchair,
 } from "lucide-react";
 import Link from "next/link";
 import React from "react";
@@ -44,21 +44,27 @@ const BottomNav = () => {
           href="/shop"
           className="relative px-4 py-2 text-gray-700 font-medium hover:text-[#35AFA0] transition duration-300 group flex"
         >
-          <Beef className="mr-1" size={20} strokeWidth="1.5px" /> MEATS&SEAFOOD
+          <SoapDispenserDroplet
+            className="mr-1"
+            size={20}
+            strokeWidth="1.5px"
+          />{" "}
+          Beauty
           <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-[#35AFA0] transition-all duration-300 group-hover:w-full"></span>
         </Link>
         <Link
           href="/shop"
           className="relative px-4 py-2 text-gray-700 font-medium hover:text-[#35AFA0] transition duration-300 group flex"
         >
-          <Croissant className="mr-1" size={20} strokeWidth="1.5px" /> BAKERY
+          <FireExtinguisher className="mr-1" size={20} strokeWidth="1.5px" />{" "}
+          Fragrances
           <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-[#35AFA0] transition-all duration-300 group-hover:w-full"></span>
         </Link>
         <Link
           href="/shop"
           className="relative px-4 py-2 text-gray-700 font-medium hover:text-[#35AFA0] transition duration-300 group flex"
         >
-          <Coffee className="mr-1" size={20} strokeWidth="1.5px" /> BEVERAGES
+          <Armchair className="mr-1" size={20} strokeWidth="1.5px" />Furniture
           <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-[#35AFA0] transition-all duration-300 group-hover:w-full"></span>
         </Link>
 

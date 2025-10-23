@@ -6,6 +6,7 @@ import BottomNav from "./BottomNav";
 import Link from "next/link";
 import { useDispatch, useSelector } from "react-redux";
 import { logout, loaduser } from "@/Redux/slices/userSlice"
+import { searchProducts, setSearchTerm } from "@/Redux/slices/searchSlice";
 
 const searchheader = () => {
   const dispatch = useDispatch()
@@ -14,6 +15,12 @@ const searchheader = () => {
   const [isClient, setIsClient] = useState(false);
   const cartItems = useSelector((state) => state.cart.items);
   const totalQuantity = cartItems.reduce((acc, item) => acc + item.quantity, 0);
+  const cart = useSelector((state) => state.cart.items);
+  const totalPrice = cart.reduce(
+      (acc, item) => acc + item.price * item.quantity,
+      0
+  );
+  const {term} =useSelector((state) => state.search)
 
   useEffect(() => {
     setIsClient(true);
@@ -26,6 +33,13 @@ const searchheader = () => {
     dispatch(logout())
     setshowlogout(false);
   };
+  const handlesearch = (e) => {
+    const value = e.target.value
+    dispatch(setSearchTerm(value))
+    if (value.trim().length > 1) {
+      dispatch(searchProducts(value))
+    }
+  }
 
   if (!isClient) return null;
 
@@ -58,6 +72,7 @@ const searchheader = () => {
             type="search"
             placeholder="search for Products, Fruits, meat, eggs, etc..."
             className="px-5 py-3  bg-gray-200 rounded w-full text-sm "
+            onChange={handlesearch}
           />
         </div>
 
@@ -78,10 +93,10 @@ const searchheader = () => {
                 log out
               </button>
             )}
-            <span className="mx-4 text-lg">$0.00</span>
+            <span className="mx-4 text-lg">{totalPrice.toFixed(2)}</span>
             {/* cart  */}
             <div className="relative cursor-pointer">
-              <Link href="/">
+              <Link href="/chakout">
                 <span className="bg-[#EA2B0F] text-white right-0 absolute -top-1  rounded-full px-1 text-xs">
                   {totalQuantity}
                 </span>

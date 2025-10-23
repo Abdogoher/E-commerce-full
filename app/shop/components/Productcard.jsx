@@ -39,7 +39,7 @@ const Productcard = () => {
       {filteredproducts.map((pro) => {
         const inCart = cart.find((item) => item.id === pro.id);
         return (
-          <div key={pro.id} className="p-8 border border-gray-200 rounded-md">
+          <div key={pro.id} className="p-4 border border-gray-200 rounded-md">
             <div className="relative">
               <span className="absolute rounded bg-red-500 text-white px-2 py-1 text-xs">
                 {pro.discountPercentage}%
