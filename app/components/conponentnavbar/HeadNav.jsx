@@ -7,27 +7,25 @@ const HeadNav = () => {
     <div>
       {/* side 1 */}
       <div>
-        <p className="text-center w-full bggreen text-xs py-2 text-white">
+        <p className="text-center w-full bggreen text-[10px] md:text-xs py-1 md:py-2 text-white">
           Due to current circumstances, there may be slight delays in order
           processing
         </p>
       </div>
       {/* side 2 */}
-      <div className="container mx-auto flex md:justify-between items-middle text-xs md:text-sm py-1 gap-2 md:gap-0">
+      <div className="container mx-auto flex flex-wrap md:flex-nowrap md:justify-between items-center text-[10px] md:text-sm py-1 gap-0 md:gap-2">
+        {/* about / compare / wishlist */}
         <div className="text-gray-500 grow-5">
-          {/* about  */}
           <Link href="/">About Us</Link>
-          {/* compare  */}
           <Link className="mx-2" href="/">
             Compare
           </Link>
-          {/* wishlist  */}
           <Link href="/">Wishlist</Link>
         </div>
         {/* secure delivery */}
         <div className="text-gray-500 flex items-center grow-1">
-          <Hand className="mr-1" size={18} />
-          <span className=" text-sm">
+          <Hand className="md:w-6 w-3 mr-1" size={18} />
+          <span className="text-[10px] md:text-sm">
             {" "}
             100% Secure delivery without contacting the courier
           </span>
