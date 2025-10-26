@@ -4,10 +4,10 @@ import React from "react";
 
 const Banner1 = () => {
   return (
-    <div className="mx-auto w-3/5 bg-[#F8EFEA] px-8 py-10 rounded-xl overflow-hidden">
+    <div className=" bg-[#F8EFEA] px-2 md:px-8 py-3 md:py-10 rounded-xl overflow-hidden">
       <div className="flex justify-between items-center relative">
         <div>
-          <p className="text-md text-green-500">
+          <p className="text-[6px] md:text-md text-green-500">
             <span className="font-semibold">100% secure delivre</span> without
             contacting the courier{" "}
           </p>
@@ -18,11 +18,11 @@ const Banner1 = () => {
             alt="..."
             height={230}
             width={320}
-            className="absolute -top-20 left-1/2 "
+            className="absolute -top-10 md:-top-20 left-40 md:left-1/2 w-36 h-32 "
           />
         </div>
         <div>
-          <button className="bg-green-500 text-white text-xs px-4 py-2 rounded-l-full rounded-r-full ">
+          <button className="bg-green-500 text-white text-[6px] md:text-xs px-2 md:px-4 py-1 md:py-2 rounded-l-full rounded-r-full ">
             <Link href="/shop">Shop Now</Link>
           </button>
         </div>

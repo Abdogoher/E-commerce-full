@@ -15,9 +15,13 @@ export default function ClientLayout({ children }) {
   return (
     <>
       {!hideLayout && <Navbar />}
-      {term.trim().length > 1 ? <div className="w-3/5 mx-auto">
-        <SearchResults />
-      </div> : children}
+      {term.trim().length > 1 ? (
+        <div className="w-full md:w-2/3 px-2 mx-auto">
+          <SearchResults />
+        </div>
+      ) : (
+        <div className="w-full md:w-2/3 px-2 mx-auto ">{children}</div>
+      )}
       {!hideLayout && <Footer />}
     </>
   );

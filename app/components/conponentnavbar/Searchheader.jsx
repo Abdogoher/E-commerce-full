@@ -44,10 +44,10 @@ const searchheader = () => {
   if (!isClient) return null;
 
   return (
-    <div className="border w-full border-gray-200 py-4 ">
-      <div className="container mx-auto flex flex-row justify-between items-center">
+    <div className="border w-full border-gray-200 py-1 md:py-4 ">
+      <div className="container mx-auto flex justify-between items-center">
         {/* logo div  */}
-        <div className="text-center md:text-left">
+        <div className="text-center ml-2 md:text-left flex flex-col">
           <div className="flex items-center">
             {/* Logo */}
             <Image
@@ -55,24 +55,26 @@ const searchheader = () => {
               width={60}
               height={60}
               alt="Logo"
-              className="w-8"
+              className="w-5 md:w-16 h-4 md:h-12"
             />
-            <span className="text-[#35AFA0] text-sm md:text-lg">Double-A</span>
+            <span className="text-[#35AFA0] text-[10px] md:text-lg">
+              Double-A
+            </span>
           </div>
           <span className="text-[5px] md:text-[10px] text-gray-500 ">
             Online Grocery Shopping Center
           </span>
         </div>
         {/* search div  */}
-        <div className="relative w-44 md:w-[200px] lg:w-[600px] px-0 md:px-10">
+        <div className="relative w-44 md:w-[200px] lg:w-[800px] px-0 md:px-10">
           <Search
-            className="absolute w-4 right-3 md:right-13 top-5 -translate-y-1/2 text-gray-600"
+            className="absolute w-3 md:w-4 right-3 md:right-13 top-4 md:top-5 -translate-y-1/2 text-gray-600"
             size={20}
           />
           <input
             type="search"
             placeholder="search for Products, Fruits, meat, eggs, etc..."
-            className="px-5 py-3  bg-gray-200 rounded w-full text-sm "
+            className="px-5 py-1 md:py-3  bg-gray-200 rounded w-full text-[8px] md:text-sm "
             onChange={handlesearch}
           />
         </div>
@@ -82,29 +84,29 @@ const searchheader = () => {
         {user ? (
           <div className="flex items-center relative">
             <User
-              className="bg-gray-200 md:w-10 w-6 rounded-full p-1"
+              className="bg-gray-200 md:w-10 w-3 md:h-10 h-3 rounded-full p-[0.5px] md:p-1"
               size={30}
               onClick={() => setshowlogout((prev) => !prev)}
             />
             {showlogout && (
               <button
                 onClick={handlelogout}
-                className="absolute bg-red-500 md:-left-22 -left-14 rounded-l-full rounded-r-full py-[0.7px] md:py-1 md:px-4 px-2 text-xs md:text-md"
+                className="absolute bg-red-500 md:-left-22 -left-11 rounded-l-full rounded-r-full py-[0.7px] md:py-1 md:px-4 px-2 text-[8px] md:text-lg"
               >
                 log out
               </button>
             )}
-            <span className="mx-4 text-sm md:text-lg">
+            <span className="md:mx-4 mx-1 text-xs md:text-lg">
               {totalPrice.toFixed(2)}
             </span>
             {/* cart  */}
             <div className="relative cursor-pointer">
               <Link href="/chakout">
-                <span className="bg-[#EA2B0F] text-white right-0 absolute -top-1  rounded-full px-1 text-[10px] md:text-xs">
+                <span className="bg-[#EA2B0F] text-white right-0 absolute -top-1  rounded-full px-1 text-[5px] md:text-xs">
                   {totalQuantity}
                 </span>
                 <Handbag
-                  className="rounded-full md:w-10 w-6 bg-red-300 p-1 text-[#EA2B0F]"
+                  className=" md:w-10 w-3 md:h-10 h-3 rounded-full p-[0.5px] md:p-1 bg-red-300  text-[#EA2B0F]"
                   size={30}
                 />
               </Link>
