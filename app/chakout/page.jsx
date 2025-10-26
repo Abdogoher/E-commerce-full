@@ -4,7 +4,7 @@ import Contact from './components/Contact';
 
 const page = () => {
   return (
-    <div className="w-3/5 mx-auto grid grid-cols-2 divide-gray-300 divide-x pb-20 mt-3">
+    <div className=" grid grid-cols-2 divide-gray-300 divide-x pb-20 mt-3">
       <Contact />
       <Cart />
     </div>

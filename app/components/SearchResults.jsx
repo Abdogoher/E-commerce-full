@@ -17,7 +17,7 @@ export default function SearchResults() {
       {error && <p>خطأ: {error}</p>}
       {results.length === 0 && !loading && <p>لا توجد نتائج</p>}
 
-      <div className="grid grid-cols-4 gap-4">
+      <div className="grid grid-cols-5 gap-">
         {results.map((pro) => {
           const inCart = cart.find((item) => item.id === pro.id);
           return (

@@ -24,18 +24,19 @@ const BestSellers = () => {
   if (!items) return <p>لا يوجد منتجات</p>;
 
   return (
-    <div className="w-3/5 mx-auto py-3">
+    <div className="py-3">
       {/* tittle best seller */}
       <div className="flex justify-between">
         <div>
-          <h3 className="text-md font-medium">BEST SELLERS</h3>
-          <p className="text-xs text-gray-400">
+          <h3 className="text-xs md:text-md font-medium">BEST SELLERS</h3>
+          <p className="text-[8px] md:text-xs text-gray-400">
             Do not miss the current offers until the end of March.
           </p>
         </div>
         <div>
-          <button className="flex border-gray-300 border py-1 px-2 rounded-l-full rounded-r-full text-sm text-gray-400 cursor-pointer">
-            View All <MoveRight size={20} />
+          <button className="flex border-gray-300 border py-1 px-2 rounded-l-full rounded-r-full text-[8px] md:text-sm text-gray-400 cursor-pointer">
+            View All{" "}
+            <MoveRight size={20} className="ml-1 w-3 md:w-6 h-3 md:h-6" />
           </button>
         </div>
       </div>
@@ -44,7 +45,7 @@ const BestSellers = () => {
         <Swiper
           modules={[Navigation, Autoplay]}
           spaceBetween={0}
-          slidesPerView={5}
+          slidesPerView={4}
           grabCursor={true}
           navigation
           autoplay={{ delay: 3000 }}
@@ -53,9 +54,9 @@ const BestSellers = () => {
           {items.map((pro, i) => {
             return (
               <SwiperSlide key={i}>
-                <div className="p-4 border border-gray-200 rounded-md">
+                <div className="p-1 md:p-4 border border-gray-200 rounded-md">
                   <div className="relative">
-                    <span className="absolute rounded bggreen text-white px-2 py-1 text-xs">
+                    <span className="absolute rounded bggreen text-white px-[2px] md:px-2 py-[2px] md:py-1 text-[6px] md:text-xs">
                       {pro.discountPercentage}%
                     </span>
                     <Image
@@ -63,16 +64,16 @@ const BestSellers = () => {
                       alt={pro.title}
                       width={175}
                       height={155}
-                      className="w-full h-40 object-contain"
+                      className="w-full h-15 md:h-40 object-contain"
                     />
                   </div>
 
-                  <p className="font-medium text-sm mt-2">
+                  <p className="font-medium text-[8px]  md:text-sm mt-2">
                     {pro.title.length > 15
                       ? pro.title.slice(0, 15) + "..."
                       : pro.title}
                   </p>
-                  <p className="text-green-600 uppercase text-[10px] font-medium">
+                  <p className="text-green-600 uppercase text-[5px] md:text-[10px] font-medium">
                     STOCK: {pro.stock}
                   </p>
 
@@ -84,22 +85,22 @@ const BestSellers = () => {
                       readOnly
                       sx={{ fontSize: 14 }}
                     />
-                    <span className="text-gray-400 ml-2 text-xs">
+                    <span className="text-gray-400 ml-2 text-[5px] md:text-xs">
                       {Math.floor(pro.rating * 20)} review
                     </span>
                   </div>
 
-                  <div className="flex items-center gap-2 mt-2">
-                    <span className="text-gray-400 text-md line-through font-medium">
+                  <div className="flex items-center gap-2 mt-1 md:mt-2">
+                    <span className="text-gray-400 text-[10px] md:text-md line-through font-medium">
                       ${Math.round(pro.price * 1.2)}
                     </span>
-                    <span className="text-red-600 text-lg font-medium">
+                    <span className="text-red-600 text-xs md:text-lg font-medium">
                       ${pro.price}
                     </span>
                   </div>
                   <div className="text-center">
                     <button
-                      className="bg-amber-300 text-xs rounded-l-full rounded-r-full w-full py-1 mt-2"
+                      className="bg-amber-300 text-[6px] md:text-xs rounded-l-full rounded-r-full w-full py-1 mt-2"
                       onClick={() => dispatch(addToCart(pro))}
                     >
                       Add to cart
