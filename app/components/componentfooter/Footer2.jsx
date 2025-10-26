@@ -11,38 +11,40 @@ const Footer2 = () => {
   return (
     <div className="bg-gray-100">
       <div className="w-full">
-        <div className="border-b border-gray-300 w-3/5 mx-auto flex flex-col sm:flex-row justify-between items-center divide-y sm:divide-y-0 sm:divide-x divide-gray-300 py-4 text-gray-700 text-sm">
-          <div className="flex items-center gap-2 px-4 py-2 sm:py-0">
+        <div className="border-b border-gray-300 w-full md:w-3/5 mx-auto flex justify-around items-center divide-y-0 divide-x divide-gray-300 py-1 md:py-4 text-gray-700 text-[5px] md:text-sm">
+          <div className="flex justify-center items-center gap-2 px-1 md:px-4 md:py-2 py-0">
             <span>
-              <PillBottle />
+              <PillBottle className="w-3 md:w-5" />
             </span>
             <span>Everyday fresh products</span>
           </div>
-          <div className="flex items-center gap-2 px-4 py-2 sm:py-0">
-            <span>
-              <TruckElectric />
-            </span>
-            <span>Free delivery for order over $70</span>
+          <div className="flex justify-around items-center gap-2 px-1 md:px-4 md:py-2 py-0">
+            <div>
+              <TruckElectric className="w-3 md:w-5" />
+            </div>
+            <p>Free delivery for order over $70</p>
           </div>
-          <div className="flex items-center gap-2 px-4 py-2 sm:py-0">
+          <div className="flex justify-center items-center gap-2 px-1 md:px-4 md:py-2 py-0">
             <span>
-              <BadgePercent />
+              <BadgePercent className="w-3 md:w-5" />
             </span>
             <span>Daily Mega Discounts</span>
           </div>
-          <div className="flex items-center gap-2 px-4 py-2 sm:py-0">
+          <div className="flex justify-center items-center gap-2 px-1 md:px-4 md:py-2 py-0">
             <span>
-              <BadgeDollarSign />
+              <BadgeDollarSign className="w-3 md:w-5" />
             </span>
             <span>Best price on the market</span>
           </div>
         </div>
       </div>
       {/* links  */}
-      <div className="w-3/5 mx-auto flex flex-col sm:flex-row justify-between py-16 ">
+      <div className="w-full md:w-3/5 mx-auto flex justify-between px-1 py-3 md:py-16 ">
         <div>
-          <h4 className="mb-3">Fruit & Vegetables</h4>
-          <ul className="text-gray-500 text-sm">
+          <h4 className="mb-1 md:mb-3 text-xs md:text-lg">
+            Fruit & Vegetables
+          </h4>
+          <ul className="text-gray-500 text-[6px] md:text-sm">
             <li className="py-1">
               <Link href="/">Fresh Vegetables</Link>
             </li>
@@ -68,8 +70,8 @@ const Footer2 = () => {
         </div>
 
         <div>
-          <h4 className="mb-3">Breakfast & Dairy</h4>
-          <ul className="text-gray-500 text-sm">
+          <h4 className="mb-1 md:mb-3 text-xs md:text-lg">Breakfast & Dairy</h4>
+          <ul className="text-gray-500 text-[6px] md:text-sm">
             <li className="py-1">
               <Link href="/">Milk & Flavoured Milk</Link>
             </li>
@@ -98,8 +100,8 @@ const Footer2 = () => {
         </div>
 
         <div>
-          <h4 className="mb-3">Meat & Seafood</h4>
-          <ul className="text-gray-500 text-sm">
+          <h4 className="mb-1 md:mb-3 text-xs md:text-lg">Meat & Seafood</h4>
+          <ul className="text-gray-500 text-[6px] md:text-sm">
             <li className="py-1">
               <Link href="/">Breakfast Sausage</Link>
             </li>
@@ -131,8 +133,8 @@ const Footer2 = () => {
         </div>
 
         <div>
-          <h4 className="mb-3">Beverages</h4>
-          <ul className="text-gray-500 text-sm">
+          <h4 className="mb-1 md:mb-3 text-xs md:text-lg">Beverages</h4>
+          <ul className="text-gray-500 text-[6px] md:text-sm">
             <li className="py-1">
               <Link href="/">Water</Link>
             </li>
@@ -164,8 +166,8 @@ const Footer2 = () => {
         </div>
 
         <div>
-          <h4 className="mb-3">Breads & Bakery</h4>
-          <ul className="text-gray-500 text-sm">
+          <h4 className="mb-1 md:mb-3 text-xs md:text-lg">Breads & Bakery</h4>
+          <ul className="text-gray-500 text-[6px] md:text-sm">
             <li className="py-1">
               <Link href="/">Milk & Flavoured Milk</Link>
             </li>

@@ -2,7 +2,7 @@ import React from 'react'
 
 const Copon = () => {
     return (
-      <div className="md:py-8 py-3 flex justify-center bg-red-100 rounded-lg items-center text-[6px] md:text-md">
+      <div className="md:py-8 py-3 flex justify-center bg-red-100 rounded-lg items-center text-[6px] md:text-lg">
         <p className="text-red-600 ">
           Super discount for your{" "}
           <span className="underline font-bold">first purchase</span>.
