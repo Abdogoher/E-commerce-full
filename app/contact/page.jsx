@@ -4,7 +4,7 @@ import Sendus from './components/Sendus'
 
 const page = () => {
   return (
-    <div className='w-3/5 mx-auto'>
+    <div>
           <Contactmethod />
           <Sendus />
     </div>

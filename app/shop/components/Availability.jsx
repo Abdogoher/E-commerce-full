@@ -16,15 +16,15 @@ const Availability = () => {
 
 
   return (
-    <div className="">
-      <p className="font-medium">AVAILABILITY</p>
+    <div className="md:ml-0 ml-2">
+      <p className="font-medium text-[8px] md:text-lg">AVAILABILITY</p>
       <ul className="text-gray-500">
-        <li className="mb-1 flex justify-between">
+        <li className="mb-1 flex justify-between text-[6px] md:text-xs">
           <div className="flex justify-between">
             <input
               type="checkbox"
               id="stock"
-              className="mr-2 "
+              className="mr-[2px] md:mr-2 w-2 md:w-4 h-2 md:h-4"
               checked={stocks.includes("In Stock")}
               onChange={() => dispatch(bystock("In Stock"))}
             />
@@ -34,12 +34,12 @@ const Availability = () => {
           </div>
           <label className="ml-1">({inStockCount})</label>
         </li>
-        <li className="mb-1 flex justify-between">
+        <li className="mb-1 flex justify-between text-[6px] md:text-xs">
           <div className="flex justify-between">
             <input
               type="checkbox"
               id="stock1"
-              className="mr-2 "
+              className="mr-[2px] md:mr-2 w-2 md:w-4 h-2 md:h-4"
               checked={stocks.includes("Low Stock")}
               onChange={() => dispatch(toggleStock("Low Stock"))}
             />

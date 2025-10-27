@@ -68,7 +68,7 @@ const BestSellers = () => {
                     />
                   </div>
 
-                  <p className="font-medium text-[8px]  md:text-sm mt-2">
+                  <p className="font-medium text-[8px] md:text-sm mt-2">
                     {pro.title.length > 15
                       ? pro.title.slice(0, 15) + "..."
                       : pro.title}
@@ -83,18 +83,24 @@ const BestSellers = () => {
                       value={pro.rating ?? 0}
                       precision={0.5}
                       readOnly
-                      sx={{ fontSize: 14 }}
+                      sx={{
+                        fontSize: {
+                          xs: "8px", // على الموبايل
+                          sm: "14px", // من أول شاشة كمبيوتر صغيرة
+                          md: "16px", // لو عايز تكبر أكتر على الشاشات الأكبر
+                        },
+                      }}
                     />
-                    <span className="text-gray-400 ml-2 text-[5px] md:text-xs">
+                    <span className="text-gray-400 ml-[2px] md:ml-2 text-[5px] md:text-xs">
                       {Math.floor(pro.rating * 20)} review
                     </span>
                   </div>
 
                   <div className="flex items-center gap-2 mt-1 md:mt-2">
-                    <span className="text-gray-400 text-[10px] md:text-md line-through font-medium">
+                    <span className="text-gray-400 text-[8px] md:text-md line-through font-medium">
                       ${Math.round(pro.price * 1.2)}
                     </span>
-                    <span className="text-red-600 text-xs md:text-lg font-medium">
+                    <span className="text-red-600 text-[10px] md:text-lg font-medium">
                       ${pro.price}
                     </span>
                   </div>
