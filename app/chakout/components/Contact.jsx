@@ -46,7 +46,9 @@ const Contact = () => {
             />
             <label
               htmlFor="Country"
-              className="absolute left-1 md:left-4 top-1 md:top-2 text-gray-500 text-[8px] md:text-sm transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:top-[2px] md:peer-focus:top-2 peer-focus:text-[6px] md:peer-focus:text-sm peer-focus:text-indigo-500"
+              className="absolute left-1 md:left-4 top-2 md:top-2 text-gray-500 text-[8px] md:text-sm transition-all 
+peer-placeholder-shown:top-2 md:peer-placeholder-shown:top-2 peer-placeholder-shown:text-[8px] md:peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 
+peer-focus:top-[2px] md:peer-focus:top-2 peer-focus:text-[6px] md:peer-focus:text-sm peer-focus:text-indigo-500"
             >
               Country/Region
             </label>

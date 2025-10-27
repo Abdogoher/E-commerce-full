@@ -8,7 +8,7 @@ import Productcategory from "./Productcategory.jsx";
 
 const Sideshop = () => {
   return (
-    <div className="grow-1 px-2 max-w-xl">
+    <div className="px-2 flex justify-between md:flex-col">
       {/* PRODUCT div */}
       <Productcategory />
 
@@ -22,13 +22,13 @@ const Sideshop = () => {
       <Availability />
 
       {/* image div */}
-      <div className="mt-20 ">
+      <div className="mt-20 hidden sm:block grow-0 sm:grow-1">
         <Image
           src="/assets/images/happyday.jpg"
           alt="..."
           width={270}
           height={370}
-          className="block w-full"
+          className="w-0 h-0 md:w-full md:h-100"
         />
       </div>
     </div>

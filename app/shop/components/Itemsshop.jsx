@@ -19,7 +19,7 @@ const Itemsshop = () => {
         />
       </div>
       {/* caption div */}
-      <div className="flex justify-between py-4 px-12 mt-4 bg-blue-50 rounded text-xs">
+      <div className="flex justify-between py-1 md:py-4 px-12 mt-4 bg-blue-50 rounded text-[8px] md:text-xs">
         <div className="text-gray-400">{items ? items.length : "0"}products</div>
         <div>
           <span className="text-gray-400">Sort by:</span>

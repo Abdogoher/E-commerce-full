@@ -7,18 +7,18 @@ const Banner1 = () => {
     <div className=" bg-[#F8EFEA] px-2 md:px-8 py-3 md:py-10 rounded-xl overflow-hidden">
       <div className="flex justify-between items-center relative">
         <div>
-          <p className="text-[6px] md:text-md text-green-500">
+          <p className="text-[6px] md:text-lg text-green-500">
             <span className="font-semibold">100% secure delivre</span> without
             contacting the courier{" "}
           </p>
         </div>
-        <div className=" ">
+        <div>
           <Image
             src="/assets/images/banner0.png"
             alt="..."
             height={230}
             width={320}
-            className="absolute -top-10 md:-top-20 left-40 md:left-1/2 w-36 h-32 "
+            className="absolute -top-10 md:-top-20 left-40 md:left-1/2 w-36 md:w-80 h-32 md:h-60 "
           />
         </div>
         <div>

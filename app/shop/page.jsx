@@ -8,9 +8,9 @@ import Itemsshop from './components/Itemsshop';
 
 const page = () => {
   return (
-    <div className='container w-2/3 mx-auto'>
+    <div>
       <Pageroute />
-      <div className="flex">
+      <div className="flex flex-col md:flex-row justify-between">
       <Sideshop />
       <Itemsshop />
       </div>
